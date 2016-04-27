@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '>= 2.0'
   spec.add_development_dependency 'timecop', '0.8.0'
+  spec.add_development_dependency 'embulk'
 
   spec.add_dependency 'unindent', '1.0'
   spec.add_dependency 'mysql2-cs-bind', '0.0.6'
@@ -30,4 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'embulk-parser-jsonl', '0.0.1'
   spec.add_dependency 'embulk-formatter-jsonl', '0.1.4'
   spec.add_dependency 'bigquery', '0.8.3'
+  spec.add_dependency 'parallel', '~> 1.6'
 end

@@ -1,3 +1,4 @@
+require 'parallel'
 module Samidare
   class Embulk
     def run(database_configs, all_table_configs, bq_config, target_table_names = [])
@@ -23,7 +24,7 @@ module Samidare
       process_times = []
       error_tables = []
       big_query = Samidare::BigQueryUtility.new(bq_config)
-      table_configs.each do |table_config|
+      Parallel.each(table_configs) do |table_config|
         start_time = Time.now
         log "table: #{table_config.name} - start"
 
