@@ -22,6 +22,7 @@ module Samidare
       def client
         @client ||= Mysql2::Client.new(
           :host => @database_config['host'],
+          :port => @database_config['port'],
           :username => @database_config['username'],
           :password => @database_config['password'],
           :database => @database_config['database'])

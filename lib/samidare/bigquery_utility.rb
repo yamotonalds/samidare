@@ -13,6 +13,7 @@ module Samidare
       password: <%= password %>
       database: <%= database %>
       host: <%= host %>
+      port: <%= port %>
       query: |
         <%= query %>
     out:
@@ -55,6 +56,7 @@ module Samidare
 
     def generate_embulk_config(db_name, database_config, table_config, columns)
       host = database_config['host']
+      port = database_config['port'] || 3306
       user = database_config['username']
       password = database_config['password']
       database = database_config['database']
